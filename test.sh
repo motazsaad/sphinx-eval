@@ -1,44 +1,24 @@
 #!/usr/bin/env bash
 
+lm_dmp_dir=${1}
+hyp_dir=${2}
+dic_file=${3}
+test_dir=${4}
+test_corpus=${5}
+acoustic_dir=${6}
+log_dir={7}
 
-for lm in ~/lms/data/lms/newswire*pruned*DMP
+for lm in lm_dmp_dir
 do
-
 lm_name=$(basename $lm)
-dic_name=$(sed 's/pruned[0-9]*.lm.DMP/.dic/g' <<< ${lm_name})
-
 nohup pocketsphinx_batch \
  -adcin yes \
- -cepdir jsc_wav \
+ -cepdir ${test_dir}/${test_corpus}_wav \
  -cepext .wav \
- -ctl jsc_test.fileids \
+ -ctl ${test_dir}/${test_corpus}_test.fileids \
  -lm ${lm} \
- -dict ~/lms/data/dicts/${dic_name} \
- -hmm model_parameters/s0192_spk.cd_cont_1000 \
- -hyp hyp/jsc_${lm_name}.hyp &> out/jsc_${lm_name}.out&
-
-nohup pocketsphinx_batch \
- -adcin yes \
- -cepdir kacst_wav \
- -cepext .wav \
- -ctl kacst2_test.fileids \
- -lm ${lm} \
- -dict ~/lms/data/dicts/${dic_name} \
- -hmm model_parameters/s0192_spk.cd_cont_1000 \
- -hyp hyp/kacst2_${lm_name}.hyp &> out/kacst2_${lm_name}.out&
-
-
-nohup pocketsphinx_batch \
- -adcin yes \
- -cepdir ~/speechdata/elra/sphinx_files/speech_test_wav \
- -cepext .wav \
- -ctl N7_020723_RMC_AR.fileids \
- -lm ${lm} \
- -dict ~/lms/data/dicts/${dic_name} \
- -hmm model_parameters/s0192_spk.cd_cont_1000 \
- -hyp hyp/N7_020723_RMC_AR_${lm_name}.hyp &> out/N7_020723_RMC_AR_${lm_name}.out&
-
-
-
+ -dict ${dict_file} \
+ -hmm ${acoustic_dir}/model_parameters/s0192_spk.cd_cont_1000 \
+ -hyp ${test_dir}/${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${log_dir}/${test_corpus}_${lm_name}.out&
 done 
 
