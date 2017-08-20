@@ -19,21 +19,21 @@ hyp_dir=${test_dir}/${hyp_dir}
 mkdir -p ${hyp_dir}
 mkdir -p ${log_dir}
 
-printf "lm_dmp_dir %s\n" "${lm_dmp_dir}"
-printf "dic_dir %s\n" "${dic_dir}"
-printf "acoustic_dir %s\n" "${acoustic_dir}"
-printf "test_dir %s\n" "${test_dir}"
-printf "test_corpus %s\n" "${test_corpus}"
-printf "hyp_dir %s\n" "${hyp_dir}"
-printf "log_dir %s\n" "${log_dir}"
+printf "lm_dmp_dir: %s\n" "${lm_dmp_dir}"
+printf "dic_dir: %s\n" "${dic_dir}"
+printf "acoustic_dir: %s\n" "${acoustic_dir}"
+printf "test_dir: %s\n" "${test_dir}"
+printf "test_corpus: %s\n" "${test_corpus}"
+printf "hyp_dir: %s\n" "${hyp_dir}"
+printf "log_dir: %s\n" "${log_dir}"
 
 for lm in lm_dmp_dir/*.DMP
 do
-echo ${lm}
+printf "lm: %s\n" "${lm}"
 lm_name=$(basename $lm)
-echo ${lm_name}
+printf "lm_name: %s\n" "${lm_name}"
 dic_name=$(echo $lm_name | cut -d '.' -f1)
-echo ${dic_name}
+printf "dic_name: %s\n" "${dic_name}"
 nohup pocketsphinx_batch \
  -adcin yes \
  -cepdir ${test_dir}/${test_corpus}_wav \
