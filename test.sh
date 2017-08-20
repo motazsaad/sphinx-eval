@@ -11,10 +11,21 @@ acoustic_dir=${3}
 test_dir=${4}
 test_corpus=${5}
 hyp_dir=${6}
-log_dir={7}
+log_dir=${7}
+
+log_dir=${test_dir}/${log_dir}
+hyp_dir=${test_dir}/${hyp_dir}
 
 mkdir -p ${hyp_dir}
 mkdir -p ${log_dir}
+
+printf "lm_dmp_dir %s\n" "${lm_dmp_dir}"
+printf "dic_dir %s\n" "${dic_dir}"
+printf "acoustic_dir %s\n" "${acoustic_dir}"
+printf "test_dir %s\n" "${test_dir}"
+printf "test_corpus %s\n" "${test_corpus}"
+printf "hyp_dir %s\n" "${hyp_dir}"
+printf "log_dir %s\n" "${log_dir}"
 
 for lm in lm_dmp_dir
 do
@@ -28,7 +39,7 @@ nohup pocketsphinx_batch \
  -lm ${lm} \
  -dict ${dic_dir}/${dic_name} \
  -hmm ${acoustic_dir}/model_parameters/s0192_spk.cd_cont_1000 \
- -hyp ${test_dir}/${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${test_dir}/${log_dir}/${test_corpus}_${lm_name}.out&
+ -hyp ${test_dir}/${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${log_dir}/${test_corpus}_${lm_name}.out&
 done 
 
 
