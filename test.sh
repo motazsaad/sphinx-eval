@@ -40,7 +40,7 @@ nohup pocketsphinx_batch \
  -cepext .wav \
  -ctl ${test_dir}/${test_corpus}_test.fileids \
  -lm ${lm} \
- -dict ${dic_dir}/${dic_name} \
+ -dict ${dic_dir}/${dic_name}.dic \
  -hmm ${acoustic_dir}/model_parameters/s0192_spk.cd_cont_1000 \
  -hyp ${test_dir}/${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${log_dir}/${test_corpus}_${lm_name}.out&
 done 
