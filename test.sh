@@ -29,8 +29,11 @@ printf "log_dir %s\n" "${log_dir}"
 
 for lm in lm_dmp_dir/*.DMP
 do
+echo ${lm}
 lm_name=$(basename $lm)
+echo ${lm_name}
 dic_name=$(echo $lm_name | cut -d '.' -f1)
+echo ${dic_name}
 nohup pocketsphinx_batch \
  -adcin yes \
  -cepdir ${test_dir}/${test_corpus}_wav \
