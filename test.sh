@@ -27,7 +27,7 @@ printf "test_corpus: %s\n" "${test_corpus}"
 printf "hyp_dir: %s\n" "${hyp_dir}"
 printf "log_dir: %s\n" "${log_dir}"
 
-for lm in lm_dmp_dir/*.DMP
+for lm in ${lm_dmp_dir}/*.DMP
 do
 printf "lm: %s\n" "${lm}"
 lm_name=$(basename $lm)
