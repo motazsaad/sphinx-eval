@@ -27,7 +27,7 @@ printf "test_corpus %s\n" "${test_corpus}"
 printf "hyp_dir %s\n" "${hyp_dir}"
 printf "log_dir %s\n" "${log_dir}"
 
-for lm in lm_dmp_dir
+for lm in lm_dmp_dir/*.DMP
 do
 lm_name=$(basename $lm)
 dic_name=$(echo $lm_name | cut -d '.' -f1)
