@@ -27,7 +27,7 @@ printf "test_corpus: %s\n" "${test_corpus}"
 printf "hyp_dir: %s\n" "${hyp_dir}"
 printf "log_dir: %s\n" "${log_dir}"
 
-dic_name=3in1.dic
+dic_name=3in1
 
 for lm in ${lm_dmp_dir}/*gt100*
 do
