@@ -24,7 +24,7 @@ bash sphinx-eval/test3in1dic_gt100.sh dmps dicts acoustic asr-test/N7_020723_RMC
 /home/msaad/speechdata/elra/sphinx_files/speech_test_wav hyp logs
 
 # evaluate N7_020723_RMC_AR
-for h in  asr-test/N7_020723_RMC/hyp/*gt100*
+for h in asr-test/N7_020723_RMC/hyp/*gt100*
 do
 echo ${h}
 perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
@@ -55,7 +55,7 @@ bash sphinx-eval/test3in1dic_gt100.sh dmps dicts acoustic asr-test/jsc jsc \
 asr-test/jsc/jsc_wav hyp logs
 
 # evaluate jsc
-for h in  asr-test/jsc/hyp/*gt100*
+for h in asr-test/jsc/hyp/*gt100*
 do
 echo ${h}
 perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
