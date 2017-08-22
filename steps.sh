@@ -47,6 +47,21 @@ test/N7_040810_MED/N7_040810_MED_AR_test.transcription ${h} | grep 'TOTAL Percen
 done
 
 
+#########################################################
+
+
+# jsc
+bash sphinx-eval/test3in1dic_gt100.sh dmps dicts acoustic test/jsc jsc \
+test/jsc/jsc_wav hyp logs
+
+# evaluate jsc
+for h in  test/jsc/hyp/*gt100*
+do
+echo ${h}
+perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
+test/jsc/jsc_test.transcription ${h} | grep 'TOTAL Percent'
+done
+
 
 
 
