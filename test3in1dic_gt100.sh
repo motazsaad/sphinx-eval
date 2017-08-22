@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [ $# -ne 7 ]; then
-    echo "usage ${0} lm_dmp_dir dic_dir acoustic_dir test_dir test_corpus hyp_dir log_dir";
+if [ $# -ne 8 ]; then
+    echo "usage ${0} lm_dmp_dir dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir";
     exit -1;
 fi
 
@@ -10,8 +10,9 @@ dic_dir=${2}
 acoustic_dir=${3}
 test_dir=${4}
 test_corpus=${5}
-hyp_dir=${6}
-log_dir=${7}
+wav_dir=${6}
+hyp_dir=${7}
+log_dir=${8}
 
 log_dir=${test_dir}/${log_dir}
 hyp_dir=${test_dir}/${hyp_dir}
@@ -24,6 +25,7 @@ printf "dic_dir: %s\n" "${dic_dir}"
 printf "acoustic_dir: %s\n" "${acoustic_dir}"
 printf "test_dir: %s\n" "${test_dir}"
 printf "test_corpus: %s\n" "${test_corpus}"
+printf "wav_dirs: %s\n" "${wav_dir}"
 printf "hyp_dir: %s\n" "${hyp_dir}"
 printf "log_dir: %s\n" "${log_dir}"
 
@@ -38,7 +40,7 @@ printf "lm_name: %s\n" "${lm_name}"
 printf "dic_name: %s\n" "${dic_name}"
 nohup pocketsphinx_batch \
  -adcin yes \
- -cepdir ${test_dir}/${test_corpus}_wav \
+ -cepdir ${wav_dir} \
  -cepext .wav \
  -ctl ${test_dir}/${test_corpus}_test.fileids \
  -lm ${lm} \
