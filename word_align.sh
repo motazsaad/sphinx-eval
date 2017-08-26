@@ -5,12 +5,13 @@
 function align {
     test_dir=${1}
     transcription=${2}
-    mkdir -p ${test_corpus}/align/
+    mkdir -p ${test_corpus}/align
     align_dir=${test_corpus}/align
     for hyp in ${test_corpus}/hyp/*gt100*
     do
+    hyp_name=$(basename $hyp)
     perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
-    ${test_corpus}/${transcription} ${hyp} > ${align_dir}${hyp}.align
+    ${test_corpus}/${transcription} ${hyp} > ${align_dir}/${hyp_name}.align
     done
 
 
