@@ -2,7 +2,7 @@
 
 
 
-for test_text in asr-test/text_txt/*
+for test_text in asr-test/test_txt/*
 do
     test_name=$(basename $test_text)
     printf "test text: %s\n---------\n\n" ${test_name}
