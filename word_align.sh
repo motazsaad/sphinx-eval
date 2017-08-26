@@ -18,7 +18,7 @@ function align {
 
 
 # word align kacst
-test_corpus="asr-test/kacst/"
+test_corpus="asr-test/kacst"
 trs=kacst500_test.transcription
 align ${test_corpus} ${trs}
 
@@ -32,13 +32,13 @@ align ${test_corpus} ${trs}
 
 
 # word align N7_040810_MED_AR
-test_corpus="asr-test/N7_040810_MED/"
+test_corpus="asr-test/N7_040810_MED"
 trs=N7_040810_MED_AR_test.transcription
 align ${test_corpus} ${trs}
 
 
 # word align jsc
-test_corpus="asr-test/jsc/"
+test_corpus="asr-test/jsc"
 trs=jsc_test.transcription
 align ${test_corpus} ${trs}
 
