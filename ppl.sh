@@ -25,3 +25,11 @@ do
     done
     sort -n asr-test/ppl_dir/${test_name}_results.txt > asr-test/ppl_dir/${test_name}_results_sorted.txt
 done
+
+
+cat asr-test/ppl_dir/*jsc*sorted.txt > asr-test/lm_ppl.result
+echo "--------------------------------" >> asr-test/lm_ppl.result
+cat asr-test/ppl_dir/*kacst500*sorted.txt >> asr-test/lm_ppl.result
+echo "--------------------------------" >> asr-test/lm_ppl.result
+cat asr-test/ppl_dir/*N*sorted.txt >> asr-test/lm_ppl.result
+
