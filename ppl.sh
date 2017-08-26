@@ -6,7 +6,7 @@ for test_text in asr-test/test_txt/*
 do
     test_name=$(basename $test_text)
     printf "test text: %s\n---------\n\n" ${test_name}
-    for lm in dmps/*
+    for lm in lms/*gt100*
     do
         lm_name=$(basename $lm)
         printf "applying %s\n" ${lm_name}
