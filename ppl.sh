@@ -31,5 +31,7 @@ cat asr-test/ppl_dir/*jsc*sorted.txt > asr-test/lm_ppl.result
 echo "--------------------------------" >> asr-test/lm_ppl.result
 cat asr-test/ppl_dir/*kacst500*sorted.txt >> asr-test/lm_ppl.result
 echo "--------------------------------" >> asr-test/lm_ppl.result
-cat asr-test/ppl_dir/*N*sorted.txt >> asr-test/lm_ppl.result
+cat asr-test/ppl_dir/*N7_02*sorted.txt >> asr-test/lm_ppl.result
+echo "--------------------------------" >> asr-test/lm_ppl.result
+cat asr-test/ppl_dir/*N7_04*sorted.txt >> asr-test/lm_ppl.result
 

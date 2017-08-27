@@ -17,3 +17,9 @@ do
     echo "-----------------------------"
 done
 
+echo "" > asr-test/lm_wer.result
+for test_dir in asr-test/jsc/ asr-test/kacst/ asr-test/N7_020723_RMC/ asr-test/N7_040810_MED/
+do
+    cat  ${test_dir}acc_sorted.all >> asr-test/lm_wer.result
+    echo "--------------------------------" >> asr-test/lm_wer.result
+done
