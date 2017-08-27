@@ -7,7 +7,7 @@ function align {
     transcription=${2}
     mkdir -p ${test_corpus}/align
     align_dir=${test_corpus}/align
-    for hyp in ${test_corpus}/hyp/*gt100*
+    for hyp in ${test_corpus}/hyp/*gt*00*
     do
     hyp_name=$(basename $hyp)
     perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
