@@ -30,6 +30,7 @@ printf "test_corpus: %s\n" "${test_corpus}"
 printf "wav_dirs: %s\n" "${wav_dir}"
 printf "hyp_dir: %s\n" "${hyp_dir}"
 printf "log_dir: %s\n" "${log_dir}"
+printf "%s\n" "------------------------------"
 
 dic_name=3in1
 
