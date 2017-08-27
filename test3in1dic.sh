@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-if [ $# -ne 8 ]; then
-    echo "usage ${0} lm_dmp_dir dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir";
+if [ $# -ne 9 ]; then
+    echo "usage ${0} lm_dmp_dir gt dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir";
     exit -1;
 fi
 
 lm_dmp_dir=${1}
-dic_dir=${2}
-acoustic_dir=${3}
-test_dir=${4}
-test_corpus=${5}
-wav_dir=${6}
-hyp_dir=${7}
-log_dir=${8}
+gt=${2}
+dic_dir=${3}
+acoustic_dir=${4}
+test_dir=${5}
+test_corpus=${6}
+wav_dir=${7}
+hyp_dir=${8}
+log_dir=${9}
+
 
 log_dir=${test_dir}/${log_dir}
 hyp_dir=${test_dir}/${hyp_dir}
@@ -31,7 +33,7 @@ printf "log_dir: %s\n" "${log_dir}"
 
 dic_name=3in1
 
-for lm in ${lm_dmp_dir}/*gt100*
+for lm in ${lm_dmp_dir}/*gt${gt}*
 do
 printf "lm: %s\n" "${lm}"
 lm_name=$(basename $lm)
