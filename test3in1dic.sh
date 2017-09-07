@@ -32,7 +32,7 @@ printf "hyp_dir: %s\n" "${hyp_dir}"
 printf "log_dir: %s\n" "${log_dir}"
 printf "%s\n" "------------------------------"
 
-dic_name=3in1
+dic_name=3in1_gt1_var5
 
 for lm in ${lm_dmp_dir}/*gt${gt}*
 do
@@ -49,7 +49,7 @@ nohup pocketsphinx_batch \
  -lm ${lm} \
  -dict ${dic_dir}/${dic_name}.dic \
  -hmm ${acoustic_dir}/model_parameters/s0192_spk.cd_cont_1000 \
- -hyp ${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${log_dir}/${test_corpus}_${lm_name}.out&
+ -hyp ${hyp_dir}/${test_corpus}_${lm_name}.hyp &> ${log_dir}/${test_corpus}_${lm_name}_${dict_name}.out&
 done 
 
 
