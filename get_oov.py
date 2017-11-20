@@ -22,7 +22,7 @@ def dump_oov(ref_file, hyp_file, oov_file):
         oov_words = ref_words - hyp_words
         for item in oov_words:
             oov_set.add(item)
-    for word in oov_words:
+    for word in oov_set:
         oov_file.write(word + "\n")
 
 
