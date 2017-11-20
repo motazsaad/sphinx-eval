@@ -5,6 +5,7 @@
 function align {
     test_dir=${1}
     transcription=${2}
+    printf "processing \n%s\n%s\n------------\n" ${test_dir} ${transcription}
     mkdir -p ${test_corpus}/align
     align_dir=${test_corpus}/align
     for hyp in ${test_corpus}/hyp/*gt*00*
