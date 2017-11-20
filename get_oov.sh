@@ -11,7 +11,7 @@ function get_oov_words {
     for hyp in ${test_corpus}/hyp/*gt*00*
     do
     hyp_name=$(basename $hyp)
-    python ~/asr_dev/sphinx-eval/get_oov \
+    python ~/asr_dev/sphinx-eval/get_oov.py \
     --ref ${test_corpus}/${transcription} --hyp ${hyp} > ${oov_dir}/${hyp_name}.oov
     done
 
