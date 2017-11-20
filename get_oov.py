@@ -32,4 +32,4 @@ def dump_oov(ref_file, hyp_file, oov_file):
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    dump_oov(args.ref, args.ref, args.oov)
+    dump_oov(args.ref, args.hyp, args.oov)
