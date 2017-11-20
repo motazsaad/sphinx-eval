@@ -20,10 +20,10 @@ def dump_oov(ref_file, hyp_file, oov_file):
     for r, h in zip(ref_lines, hyp_lines):
         ref_words = set(r.split())
         hyp_words = set(h.split())
-        print('ref_words', ref_words)
-        print('hyp_words', hyp_words)
+        # print('ref_words', ref_words)
+        # print('hyp_words', hyp_words)
         oov_words = ref_words - hyp_words
-        print('oov_words', oov_words)
+        # print('oov_words', oov_words)
         for item in oov_words:
             oov_set.add(item)
     for word in oov_set:
