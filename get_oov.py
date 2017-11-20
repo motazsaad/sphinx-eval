@@ -14,7 +14,7 @@ parser.add_argument('--oov', type=argparse.FileType(mode='w', encoding='utf-8'),
 
 def dump_oov(ref_file, hyp_file, oov_file):
     ref_lines = ref_file.readlines()
-    hyp_lines = ref_file.readlines()
+    hyp_lines = hyp_file.readlines()
     oov_set = set()
     for r, h in zip(ref_lines, hyp_lines):
         ref_words = set(r.split())
