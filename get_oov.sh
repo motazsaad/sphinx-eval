@@ -12,7 +12,7 @@ function get_oov_words {
     do
     hyp_name=$(basename $hyp)
     python ~/asr_dev/sphinx-eval/get_oov.py \
-    --ref ${test_corpus}/${transcription} --hyp ${hyp} > ${oov_dir}/${hyp_name}.oov
+    --ref ${test_corpus}/${transcription} --hyp ${hyp} --oov ${oov_dir}/${hyp_name}.oov
     done
 
 
