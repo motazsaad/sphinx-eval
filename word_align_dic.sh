@@ -47,6 +47,6 @@ align ${test_corpus} ${trs}
 
 
 
-
+printf "done!\n"
 
 
