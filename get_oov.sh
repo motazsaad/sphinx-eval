@@ -6,13 +6,13 @@ function get_oov_words {
     test_dir=${1}
     transcription=${2}
     printf "processing \n%s\n%s\n------------\n" ${test_dir} ${transcription}
-    mkdir -p ${test_corpus}/oov
-    oov_dir=${test_corpus}/oov
-    for hyp in ${test_corpus}/hyp/*gt*00*
+    mkdir -p ${test_dir}/oov
+    oov_dir=${test_dir}/oov
+    for hyp in ${test_dir}/hyp/*gt*00*
     do
     hyp_name=$(basename $hyp)
     python ~/asr_dev/sphinx-eval/get_oov.py \
-    --ref ${test_corpus}/${transcription} --hyp ${hyp} --oov ${oov_dir}/${hyp_name}.oov
+    --ref ${test_dir}/${transcription} --hyp ${hyp} --oov ${oov_dir}/${hyp_name}.oov
     done
 
 

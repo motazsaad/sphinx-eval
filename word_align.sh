@@ -6,13 +6,13 @@ function align {
     test_dir=${1}
     transcription=${2}
     printf "processing \n%s\n%s\n------------\n" ${test_dir} ${transcription}
-    mkdir -p ${test_corpus}/align
-    align_dir=${test_corpus}/align
-    for hyp in ${test_corpus}/hyp/*gt*00*
+    mkdir -p ${test_dir}/align
+    align_dir=${test_dir}/align
+    for hyp in ${test_dir}/hyp/*gt*00*
     do
     hyp_name=$(basename $hyp)
     perl /usr/local/lib/sphinxtrain/scripts/decode/word_align.pl \
-    ${test_corpus}/${transcription} ${hyp} > ${align_dir}/${hyp_name}.align
+    ${test_dir}/${transcription} ${hyp} > ${align_dir}/${hyp_name}.align
     done
 
 
