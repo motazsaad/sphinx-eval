@@ -27,7 +27,8 @@ def dump_oov(ref_file, hyp_file, oov_file):
         for item in oov_words:
             oov_set.add(item)
     for word in oov_set:
-        oov_file.write(word + "\n")
+        if word.isalph():
+            oov_file.write(word + "\n")
 
 
 if __name__ == '__main__':
