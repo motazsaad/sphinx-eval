@@ -21,6 +21,7 @@ test_corpus="asr-test/kacst"
 get_oov_count ${test_corpus}
 
 # oov count N7_020723_RMC_AR
+test_corpus="asr-test/N7_020723_RMC"
 get_oov_count ${test_corpus}
 
 # oov count N7_040810_MED_AR
