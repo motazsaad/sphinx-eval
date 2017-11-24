@@ -1,2 +1,3 @@
 # sphinx-eval
-CMU sphinx eval 
+
+CMU sphinx evaluation scripts 
