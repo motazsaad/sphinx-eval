@@ -16,7 +16,7 @@ function get_oov_count {
     test_name=$(basename ${test_dir})
     cat ${test_dir}/oov/*.oov | tr ' ' '\n' | sort | uniq -c | sort -nr > ${test_dir}/oov_freq/${test_name}_all_oov.freq
     cat ${test_dir}/oov/*.oov | tr ' ' '\n' | sort | uniq -c | sort -nr | \
-    awk '{print $2}' | head -n 1000 > asr-test/oov_all/${test_name}.oov 
+    awk '{print $2}' | head -n 500 | tr '\n' ' ' > asr-test/oov_all/${test_name}.oov 
 }
 
 
