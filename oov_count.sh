@@ -11,7 +11,7 @@ function get_oov_count {
     for oov_file in ${test_dir}/oov/*.oov
     do
         oov_name=$(basename ${oov_file})
-        cat ${oov_file} | tr ' ' '\n' | sort -nr | uniq -c > ${test_dir}/oov_freq/${oov_name}.freq
+        cat ${oov_file} | tr ' ' '\n' | sort | uniq -c | sort -nr > ${test_dir}/oov_freq/${oov_name}.freq
     done
 }
 
@@ -32,3 +32,6 @@ get_oov_count ${test_corpus}
 # oov count jsc
 test_corpus="asr-test/jsc"
 get_oov_count ${test_corpus}
+
+
+printf "done!\n"
