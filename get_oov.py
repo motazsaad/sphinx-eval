@@ -16,7 +16,7 @@ def dump_oov(ref_file, hyp_file, oov_file):
     ref_lines = ref_file.readlines()
     hyp_lines = hyp_file.readlines()
     print('ref lines: {}.\t hyp lines: {}'.format(len(ref_lines), len(hyp_lines)))
-    oov_set = set()
+    oov_list = list()
     for r, h in zip(ref_lines, hyp_lines):
         ref_words = set(r.split())
         hyp_words = set(h.split())
@@ -25,8 +25,8 @@ def dump_oov(ref_file, hyp_file, oov_file):
         oov_words = ref_words - hyp_words
         # print('oov_words', oov_words)
         for item in oov_words:
-            oov_set.add(item)
-    for word in oov_set:
+            oov_list.append(item)
+    for word in oov_list:
         if word.isalpha():
             oov_file.write(word + "\n")
 
