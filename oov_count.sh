@@ -13,7 +13,8 @@ function get_oov_count {
         oov_name=$(basename ${oov_file})
         cat ${oov_file} | tr ' ' '\n' | sort | uniq -c | sort -nr > ${test_dir}/oov_freq/${oov_name}.freq
     done
-    cat ${test_dir}/oov/*.oov | tr ' ' '\n' | sort | uniq -c | sort -nr > ${test_dir}/oov_freq/all_oov.freq
+    test_name=(basename ${test_dir})
+    cat ${test_dir}/oov/*.oov | tr ' ' '\n' | sort | uniq -c | sort -nr > ${test_dir}/oov_freq/${test_name}_all_oov.freq
 }
 
 
