@@ -6,6 +6,7 @@
 
 function get_oov_count {
     test_dir=${1}
+    printf "processing %s\n" ${test_dir}
     mkdir -p ${test_dir}/oov_freq
     for oov_file in ${test_dir}/oov/*.oov
     do
