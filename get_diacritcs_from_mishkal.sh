@@ -6,7 +6,7 @@ function get_diacritics {
     output=${3}
     out_name=$(basename ${input})
     printf "processing %s\n" ${input}
-    diacritics_cmd ${input} > ${output}/${out_name}
+    ${diacritics_cmd} ${input} > ${output}/${out_name}
 }
 
 mishkal_cmd="python mishkal/bin/mishkal-console.py -f"
