@@ -10,6 +10,7 @@ function get_diacritics {
 }
 
 mishkal_cmd="python mishkal/bin/mishkal-console.py -f"
+
 for oov_file in asr-test/oov_all/lines_*
 do
     get_diacritics ${mishkal_cmd} ${oov_file} "asr-test/oov_all/mishkal"    
