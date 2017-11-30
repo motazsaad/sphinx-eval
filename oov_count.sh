@@ -19,7 +19,7 @@ function get_oov_count {
     awk '{print $2}' | head -n 300 | tr '\n' ' ' > asr-test/oov_all/words_${test_name}.oov
     cat ${test_dir}/oov/*.oov | tr ' ' '\n' | sort | uniq -c | sort -nr | \
     awk '{print $2}' | head -n 300  > asr-test/oov_all/lines_${test_name}.oov 
-    split -l 100 -a 4 -d asr-test/oov_all/lines_${test_name}.oov asr-test/oov_all/lines_${test_name}_
+    split -l 45 -a 4 -d asr-test/oov_all/lines_${test_name}.oov asr-test/oov_all/lines_${test_name}_
 }
 
 
