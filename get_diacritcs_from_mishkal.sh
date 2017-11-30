@@ -5,7 +5,7 @@ function get_diacritics {
     output=${2}
     out_name=$(basename ${input})
     printf "processing %s\n" ${input}
-    python mishkal/bin/mishkal-console.py -f ${input} > ${output}/${out_name}
+    python mishkal/bin/mishkal-console.py -f ${input} | grep '^ ' > ${output}/${out_name}
 }
 
 for oov_file in asr-test/oov_all/lines_*
