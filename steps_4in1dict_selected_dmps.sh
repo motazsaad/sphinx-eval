@@ -3,9 +3,9 @@
 
 gt=200
 dmps_dir=selected_dmps
-dic_name=4in1_gt1_mishkal_var7
+#dic_name=4in1_gt1_mishkal_var7
 #dic_name=4in1_gt1_tashkeel_var7
-#dic_name=4in1_gt1_harakat_var7
+dic_name=4in1_gt1_harakat_var7
 #dic_name=4in1_gt1_var5
 
 # kacst
