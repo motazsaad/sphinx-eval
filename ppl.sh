@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this script gets preplixity of the between texts and LMs
 
 
 for test_text in asr-test/test_txt/*

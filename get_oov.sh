@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this script get OOV words for a transciption with respect the hyp
 
 
 function get_oov_words {

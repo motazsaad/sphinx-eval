@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# This script align words in (hyp and trs) texts 
 
 
 function align {

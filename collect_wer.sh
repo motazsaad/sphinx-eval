@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this script compute WER for the produced transcription. 
 
 #test_dirs=$(ls -d asr-test/*"/")
 
