@@ -9,6 +9,8 @@ This script compute WER for the produced transcription.
 ## get_oov.py 
 This program obtain the list of OOV from ref and hyp files
 
+```usage: get_oov.py [-h] --ref REF --hyp HYP --oov OOV```
+
 ## get_oov.sh
 This script get OOV words for a transciption with respect the hyp.
 
