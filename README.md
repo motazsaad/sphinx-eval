@@ -22,5 +22,5 @@ For more information about mishkal, please refer to https://tahadz.com/mishkal a
 This script gets perplexity (PPL) of a text given a languge model (LM). The script computes PPL for bunch of texts given bunch of LMs. 
 
 ## word_align.sh
-This script align words in (hyp and trs) texts. 
+This script align words in (hyp and trs) texts using word_align.sh script 
 

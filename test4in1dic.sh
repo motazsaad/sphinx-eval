@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# this script is the same as test.sh except for the dictionary name is fixed  
 
 if [ $# -ne 10 ]; then
     echo "usage ${0} lm_dmp_dir gt dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir dic_name";

@@ -3,10 +3,10 @@
 # The script computes PPL for bunch of texts given bunch of LMs. 
 
 #echo ${#}
-if [ $# -ne 3 ]; then
-    echo "usage: ${0} test_dir lm_dir ppl_dir";
-    exit -1;
-fi
+# if [ $# -ne 3 ]; then
+#     echo "usage: ${0} test_dir lm_dir ppl_dir";
+#     exit -1;
+# fi
 
 
 ################ generic function code ############################

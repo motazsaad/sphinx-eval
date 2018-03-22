@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-
-
-
-
+################ generic code ###########################
 function get_oov_count {
     test_dir=${1}
     printf "processing %s\n" ${test_dir}
+    # create a directory to store oov frequencis 
     mkdir -p ${test_dir}/oov_freq
     for oov_file in ${test_dir}/oov/*.oov
     do
@@ -21,9 +19,10 @@ function get_oov_count {
     awk '{print $2}' | head -n 300  > asr-test/oov_all/lines_${test_name}.oov 
     split -l 45 -a 4 -d asr-test/oov_all/lines_${test_name}.oov asr-test/oov_all/lines_${test_name}_
 }
+################## end of generic code ####################
 
 
-
+# change your arguments below according to your system 
 # oov count kacst
 test_corpus="asr-test/kacst"
 get_oov_count ${test_corpus}

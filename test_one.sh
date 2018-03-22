@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this script is the same as test.sh except for the test is targeted to one corpus 
 
 
 
