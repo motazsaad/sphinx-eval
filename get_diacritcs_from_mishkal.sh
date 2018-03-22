@@ -2,19 +2,29 @@
 # The script use miskal utility to diacritize Arabic text. 
 # https://tahadz.com/mishkal
 
-
+################################
 function get_diacritics {
-    mishkal_cmd="mishkal/bin/mishkal-console.py"
-    input=${1}
-    output=${2}
-    out_name=$(basename ${input})
-    printf "processing %s\n" ${input}
-    python ${mishkal_cmd} -f ${input} | grep '^ ' > ${output}/${out_name}
+    # change the path to mishkal-console.py according to your system 
+    mishkal_py="mishkal/bin/mishkal-console.py"
+    input_file=${1}
+    output_dir=${2}
+    out_name=$(basename ${input_file})
+    printf "processing %s\n" ${input_file}
+    python ${mishkal_py} -f ${input_file} | grep '^ ' > ${output_dir}/${out_name}
 }
+################################
 
-for oov_file in asr-test/oov_all/lines_*
+
+
+################################
+# change pathes according to your system 
+oov_files="asr-test/oov_all/lines_*"
+out_dir="asr-test/oov_all/mishkal"
+################################
+
+for oov_file in ${oov_files}
 do
-    get_diacritics ${oov_file} "asr-test/oov_all/mishkal"    
+    get_diacritics ${oov_file} ${out_dir}
 done
 
 printf "done\n"
