@@ -16,8 +16,9 @@ wav_dir=${7}
 hyp_dir=${8}
 log_dir=${9}
 dic_name=${10}
-
+# you can comment the line above and use one of dict_names below 
 #dic_name=4in1_gt1_var5
+#dic_name=3in1_gt1_var5
 
 log_dir=${test_dir}/${log_dir}
 hyp_dir=${test_dir}/${hyp_dir}

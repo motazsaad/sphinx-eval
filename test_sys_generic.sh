@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# this script is the same as test.sh except for the dictionary name is fixed 
+# this script is the generic script for test ASR results (different test corpus, different LMs and different ditcs)
 
-if [ $# -ne 9 ]; then
-    echo "usage ${0} lm_dmp_dir gt dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir";
+if [ $# -ne 10 ]; then
+    echo "usage ${0} lm_dmp_dir gt dic_dir acoustic_dir test_dir test_corpus wav_dir hyp_dir log_dir dic_name";
     exit -1;
 fi
 
@@ -15,7 +15,10 @@ test_corpus=${6}
 wav_dir=${7}
 hyp_dir=${8}
 log_dir=${9}
-dic_name=3in1_gt1_var5
+dic_name=${10}
+# you can comment the line above and use one of dict_names below 
+#dic_name=4in1_gt1_var5
+#dic_name=3in1_gt1_var5
 
 log_dir=${test_dir}/${log_dir}
 hyp_dir=${test_dir}/${hyp_dir}
