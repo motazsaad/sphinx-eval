@@ -1,26 +1,47 @@
 #!/usr/bin/env bash
-# this script compute WER for the produced transcription. 
+# This script extracts WER for the produced transcriptions. 
+# WER is extracted from (.align) files using grep command  
 
-#test_dirs=$(ls -d asr-test/*"/")
+#echo ${#}
+# if [ $# -ne 3 ]; then
+#     echo "usage: ${0} test_dir out_dir";
+#     exit -1;
+# fi
 
 
-for test_dir in asr-test/jsc/ asr-test/kacst/ asr-test/N7_020723_RMC/ asr-test/N7_040810_MED/
-do
-    echo "" > ${test_dir}acc.all
-    for f in ${test_dir}align/*
+################ generic function code ############################
+function extract_wer {
+    # directory where aligment files are. 
+    # this directory assumed to have alignment files generated using different LMs. 
+    in_dir=${1} 
+    out_dir=${2} # out directory to write the results in. 
+
+    echo "" > ${out_dir}/acc.all # create an empty file 
+    for f in ${in_dir}
     do
+        # extract accuracy from alignments (produced using different LMs)  
         acc=$(cat ${f} | grep 'TOTAL Percent' | cut -d' ' -f11)
-        printf "%s\t%s\n" ${acc} ${f} >> ${test_dir}acc.all
+        # write accuracy and filename 
+        printf "%s\t%s\n" ${acc} ${f} >> ${out_dir}/acc.all
     done
-    sort -n -r ${test_dir}acc.all > ${test_dir}acc_sorted.all
-
-    cat  ${test_dir}acc_sorted.all
+    # sort lines according to accuracy 
+    sort -n -r ${out_dir}/acc.all > ${out_dir}/acc_sorted.all
+    # display sorted file on screen 
+    cat  ${out_dir}/acc_sorted.all
     echo "-----------------------------"
-done
+}
 
-echo "" > asr-test/lm_wer.result
-for test_dir in asr-test/jsc/ asr-test/kacst/ asr-test/N7_020723_RMC/ asr-test/N7_040810_MED/
-do
-    cat  ${test_dir}acc_sorted.all >> asr-test/lm_wer.result
-    echo "--------------------------------" >> asr-test/lm_wer.result
-done
+
+# loop on test corpora 
+test_dirs="asr-test/test_corpora"
+resut_dir="asr-test/results"
+for test_corpus in test_dirs
+do 
+    extract_wer ${test_dirs} ${resut_dirs}
+done 
+
+#################################################
+##### collect all results (for all corpora) in one file ########   
+echo "" > ${resut_dir}/lm_wer.result # create output file 
+cat ${resut_dir}/*sorted.all > ${resut_dir}/lm_wer.result
+

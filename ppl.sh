@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# this script gets preplixity of the between texts and LMs
+# This script gets perplexity (PPL) of a text given a languge model (LM). 
+# The script computes PPL for bunch of texts given bunch of LMs. 
 
 #echo ${#}
 if [ $# -ne 3 ]; then

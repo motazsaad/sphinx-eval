@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# The script use miskal utility to diacritize Arabic text. 
-# https://tahadz.com/mishkal
+# The script use miskal utility to add diacritics to Arabic texts. 
+# For more information about mishkal, please refer to 
+# https://tahadz.com/mishkal and https://github.com/linuxscout/mishkal 
 
 ################################
 function get_diacritics {
