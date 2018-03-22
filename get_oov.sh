@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this script get OOV words for a transciption with respect the hyp
 
-
+################## generic code #################################
 function get_oov_words {
     test_dir=${1}
     transcription=${2}
@@ -15,39 +15,28 @@ function get_oov_words {
         python ~/asr_dev/sphinx-eval/get_oov.py \
         --ref ${test_dir}/${transcription} --hyp ${hyp} --oov ${oov_dir}/${hyp_name}.oov
     done
-
-
 }
+################## end of generic code ###########################
 
 
+# change arguments according to your system 
 # word align kacst
 test_corpus="asr-test/kacst"
 trs=kacst500_test.transcription
 get_oov_words ${test_corpus} ${trs}
-
 
 # word align N7_020723_RMC_AR
 test_corpus="asr-test/N7_020723_RMC"
 trs=N7_020723_RMC_AR_test.transcription
 get_oov_words ${test_corpus} ${trs}
 
-
-
-
 # word align N7_040810_MED_AR
 test_corpus="asr-test/N7_040810_MED"
 trs=N7_040810_MED_AR_test.transcription
 get_oov_words ${test_corpus} ${trs}
 
-
 # word align jsc
 test_corpus="asr-test/jsc"
 trs=jsc_test.transcription
 get_oov_words ${test_corpus} ${trs}
-
-
-
-
-
-
 
